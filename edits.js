@@ -13,11 +13,22 @@ function updateCategoryHeadingColor(isDark) {
     });
 }
 
-// Display the current week's date
-const currentDate = new Date();
-const startOfWeek = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay()));
-const options = { year: 'numeric', month: 'long', day: 'numeric' };
-document.getElementById('current-date').textContent = startOfWeek.toLocaleDateString(undefined, options);
+ // Function to calculate and display the first day of the current week
+ function getFirstDayOfCurrentWeek() {
+    const today = new Date(); // Get the current date
+    const dayOfWeek = today.getDay(); // Get the current day (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+    const firstDayOfWeek = new Date(today); // Create a new date object based on today
+    
+    // Calculate the most recent Sunday (first day of the week)
+    firstDayOfWeek.setDate(today.getDate() - dayOfWeek);
+    
+    // Format the date to a readable format (e.g., "Sunday, February 7, 2023")
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return firstDayOfWeek.toLocaleDateString('en-US', options);
+}
+
+// Display the first day of the week in the HTML element
+document.getElementById('current-date').innerText = getFirstDayOfCurrentWeek();
 
 // More Offers functionality
 const moreOffersButton = document.getElementById('moreOffers');
@@ -40,12 +51,14 @@ const reviews = document.querySelectorAll('.review');
         details.style.display = 'none'; // Initially hidden
 
         const reviewerName = review.querySelector('.reviewer strong').textContent;
-        const productName = review.querySelector('.review-content .review-text').textContent;
+        const productName = review.querySelector('.product-').textContent;
         const rating = review.querySelector('.rating').textContent;
+        const feadback = review.querySelector('.review-text').textContent;
 
         details.innerHTML = `
             <strong>Name:</strong> ${reviewerName}<br>
             <strong>Product:</strong> ${productName}<br>
+             <strong>Comment:</strong> ${feadback}<br>
             <strong>Rating:</strong> ${rating}<br>
         `;
 
