@@ -8,7 +8,7 @@ padding: 0;
 box-sizing: border-box;
 }
 header {
-padding: 20px;
+padding: 10px;
 background-color:#eedede;
 }
 .header-container {
@@ -888,10 +888,7 @@ body.dark-theme .cart {
 }
 
 @media (max-width: 768px) {
-    .nav-menu {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center;
-    }
+    
     .offer, .category-item, .review {
         flex: 1 1 90%; /* Full width on small screens */
     }
@@ -901,9 +898,22 @@ body.dark-theme .cart {
     .vision-statement {
         text-align: center; /* Center text for smaller screens */
     }
+    
+}
+
+@media (max-width: 768px) {
     .header-container {
-        flex-direction: column; /* Stack header elements */
-        align-items: center;
+        flex-direction: row; /* Ensure items are in a row */
+        justify-content: space-between; /* Space between */
+        align-items: center; /* Center vertically */
+    }
+
+    .nav-bar {
+        flex: 1; /* Allow nav bar to grow */
+    }
+    
+    .nav-menu {
+        flex-direction: row; /* Keep menu items in a row */
     }
 }
 
@@ -954,6 +964,13 @@ body.dark-theme .breadcrumb-item a {
     body.dark-theme .breadcrumb-item.active {
     color: #6c757d;
     }
+    /* Mobile footer adjustments */
+@media (max-width: 768px) {
+    footer {
+        padding: 10px; /* Reduce padding */
+        font-size: 0.8rem; /* Smaller font size */
+    }
+}
 
     @media (max-width: 480px) {
         h1 {
