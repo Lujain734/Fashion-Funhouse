@@ -1,20 +1,13 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <title>Manage Offers</title>
-
     <link rel="stylesheet" href="Style.css">
-
 </head>
 
 <body>
-
 
     <header>
         <div class="header-container">
@@ -23,8 +16,6 @@
             <p class="vision-statement">Our vision is to create a joyful shopping experience!</p>
         </div>
     </header>
-
-
 
     <nav class="nav-bar">
         <ul class="nav-menu">
@@ -38,101 +29,39 @@
     </nav>
 
     <main>
-        
         <nav aria-label="Breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="HomePage.html">Home</a></li>
                 <li class="breadcrumb-item"><a href="Seller'sDashboard.html">Seller's Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Make or  Delet Offer</li>
-    
+                <li class="breadcrumb-item active" aria-current="page">Make or Delete Offer</li>
             </ol>
         </nav>
 
-        
-
-
-
-
         <section class="offers-section">
-
-       
-
-            <div class="offers-grid">
-                <div class="offer-m">
-                    <input type="checkbox" id="offer1">
-                    <img src="images/offer1.png" alt="Offer 1" class="offer-img">
-                    <label for="offer1">
-                        Offer 1 <span>(Toys)</span>
-                    </label>
-                </div>
-            
-           
-                <div class="offer-m">
-                    <input type="checkbox" id="offer2">
-                    <img src="images/blushr.png" alt="Offer 2" class="offer-img">
-                    <label for="offer2">
-                        Offer 2 <span>(blush)</span>
-                    </label>
-                </div>
-            
-                <div class="offer-m">
-                    <input type="checkbox" id="offer3">
-                    <img src="images/RG-removebg-preview.png" alt="Offer 3" class="offer-img">
-                    <label for="offer3">
-                        Offer 3 <span>(Lip stick)</span>
-                    </label>
-                </div>
-            
-                <div class="offer-m">
-                    <input type="checkbox" id="offer4">
-                    <img src="images/hailighter1__2_-removebg-preview.png" alt="Offer 4" class="offer-img">
-                    <label for="offer4">
-                        Offer 4 <span>(highlighter)</span>
-                    </label>
-                </div>
-            </div>
-
+            <div class="offers-grid"></div>
             <button class="delete-btn">Delete</button>
 
-
-
-
             <form class="add-offer-form">
-
-                <h2>Add New Offer </h2><br> 
-
+                <h2>Add New Offer </h2><br>
                 <h5>Name:</h5>
-
                 <input type="text" name="name" placeholder="Name" required>
 
                 <h5>Phone:</h5>
-
                 <input type="tel" name="phone" placeholder="Phone number" required>
 
                 <h5>Price:</h5>
-
                 <input type="number" name="price" placeholder="Price" min="0" step="any" required>
 
                 <h5>Email:</h5>
-
                 <input type="email" name="email" placeholder="Email" required>
 
                 <h5>Description:</h5>
-
                 <input type="text" name="description" placeholder="Description" required>
 
                 <button type="submit">Add new offer</button>
-
             </form>
-
         </section>
-
     </main>
-
-
-
-
-
 
     <footer>
         <div class="footer-container">
@@ -153,13 +82,87 @@
                 </div>
             </div>
         </div>
-    </footer> 
+    </footer>
 
+    <script>
+        const offers = [
+            { id: 1, name: "Offer 1", category: "Toys", image: "images/offer1.png" },
+            { id: 2, name: "Offer 2", category: "Blush", image: "images/blushr.png" },
+            { id: 3, name: "Offer 3", category: "Lipstick", image: "images/RG-removebg-preview.png" },
+            { id: 4, name: "Offer 4", category: "Highlighter", image: "images/hailighter1__2_-removebg-preview.png" }
+        ];
 
+        function displayOffers() {
+            const offersGrid = document.querySelector('.offers-grid');
+            offersGrid.innerHTML = "";
+            offers.forEach(offer => {
+                const offerElement = document.createElement('div');
+                offerElement.classList.add('offer-m');
+                
+                offerElement.innerHTML = `
+                    <input type="checkbox" id="offer${offer.id}" data-id="${offer.id}">
+                    <img src="${offer.image}" alt="${offer.name}" class="offer-img">
+                    <label for="offer${offer.id}">
+                        ${offer.name} <span>(${offer.category})</span>
+                    </label>
+                `;
+                
+                offersGrid.appendChild(offerElement);
+            });
+        }
 
+        function deleteSelectedOffers() {
+            const selectedOffers = document.querySelectorAll('.offers-grid input[type="checkbox"]:checked');
+            
+            if (selectedOffers.length === 0) {
+                alert("Please select at least one offer");
+                return;
+            }
 
+            const confirmation = confirm("Are you sure you want to delete the selected offers?");
+            
+            if (confirmation) {
+                selectedOffers.forEach(checkbox => {
+                    const offerId = parseInt(checkbox.getAttribute('data-id'));
+                    const offerIndex = offers.findIndex(offer => offer.id === offerId);
+                    if (offerIndex !== -1) {
+                        offers.splice(offerIndex, 1);
+                    }
+                });
+                displayOffers();
+            }
+        }
 
+        function addNewOffer(event) {
+            event.preventDefault();
+            
+            const name = event.target.name.value;
+            const phone = event.target.phone.value;
+            const price = event.target.price.value;
+            const email = event.target.email.value;
+            const description = event.target.description.value;
+            
+            if (!name || !phone || !price || !email || !description) {
+                alert("Please fill in all fields.");
+                return;
+            }
 
+            const newOffer = {
+                id: offers.length + 1,
+                name: name,
+                category: "New Category",
+                image: "images/new_offer.png"
+            };
+            offers.push(newOffer);
+            
+            displayOffers();
+        }
+
+        document.querySelector('.delete-btn').addEventListener('click', deleteSelectedOffers);
+        document.querySelector('.add-offer-form').addEventListener('submit', addNewOffer);
+
+        displayOffers();
+    </script>
 
 </body>
 
