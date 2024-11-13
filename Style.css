@@ -186,7 +186,7 @@ body {
     /* Styles for review details shown on hover */
     .review-details {
         position: absolute;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(172, 172, 172, 0.583);
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 10px;
@@ -953,6 +953,9 @@ body {
     }
     body.dark-theme .page-links a:hover{
         background-color:#ddd4d4;
+    }
+    body.dark-theme #reviews{
+        color: white;
     }
     body.dark-theme .breadcrumb-item a {
         text-decoration: none;
