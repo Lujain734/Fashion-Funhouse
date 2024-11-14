@@ -32,126 +32,120 @@
     <main>
         <nav aria-label="Breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="HomePage.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="http://lujain734.github.io/Fashion-Funhouse/index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Makeup</li>
-    
             </ol>
         </nav>
-<div class="sort-section">
-    <label for="sort">Sort by:</label>
-    <select id="sort">
-        <!-- مجموعة تصفية حسب السعر -->
-        <optgroup label="Price">
-            <option value="price-low-high">Price: Low to High</option>
-            <option value="price-high-low">Price: High to Low</option>
-        </optgroup>
+        
+        <div class="sort-section">
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+                <!-- مجموعة تصفية حسب السعر -->
+                <optgroup label="Price">
+                    <option value="price-low-high">Price: Low to High</option>
+                    <option value="price-high-low">Price: High to Low</option>
+                </optgroup>
  
-        <!-- مجموعة تصفية حسب التقييم -->
-        <optgroup label="Rating">
-            <option value="rating-high-low">Highest Rating</option>
-            <option value="rating-low-high">Lowest Rating</option>
-        </optgroup>
- 
-        <!-- مجموعة تصفية حسب الاسم -->
-        <optgroup label="Name">
-            <option value="name-a-z">Name: A to Z</option>
-            <option value="name-z-a">Name: Z to A</option>
-        </optgroup>
-    </select>
-</div>
+                <!-- مجموعة تصفية حسب الاسم -->
+                <optgroup label="Name">
+                    <option value="name-a-z">Name: A to Z</option>
+                    <option value="name-z-a">Name: Z to A</option>
+                </optgroup>
+            </select>
+        </div>
  
         <!-- شبكة المنتجات (Product Grid) -->
         <section class="product-grid">
- 
+
             <!-- المنتج الاول - Foundation -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/11Foundation.jpg" alt="Foundation">
-    </div>
-    <h3>Foundation</h3>
-    <p>Lightweight foundation for smooth, flawless coverage. <br>50SR</p>
-    <button>Add</button>
-</div>
+            <div class="product-card" data-name="Foundation">
+                <div class="product-image">
+                    <img src="images/11Foundation.jpg" alt="Foundation">
+                </div>
+                <h3>Foundation</h3>
+                <p>Lightweight foundation for smooth, flawless coverage. <br>50SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-      <!-- المنتج الثاني - Concealer -->
-      <div class="product-card"> 
-    <div class="product-image">
-        <img src="images/11Concealer.jpg" alt="Concealer">
-    </div>
-    <h3>Concealer</h3>
-    <p>Full-coverage concealer for a flawless, even skin tone. <br> 40SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الثاني - Concealer -->
+            <div class="product-card" data-name="Concealer"> 
+                <div class="product-image">
+                    <img src="images/11Concealer.jpg" alt="Concealer">
+                </div>
+                <h3>Concealer</h3>
+                <p>Full-coverage concealer for a flawless, even skin tone. <br> 40SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الثالث - Lipstick -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/11Lipstick.jpg" alt="Lipstick">
-    </div>
-    <h3>Lipstick</h3>
-    <p>Long-lasting lipstick with vibrant colors for all occasions. <br> 30SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الثالث - Lipstick -->
+            <div class="product-card" data-name="Lipstick">
+                <div class="product-image">
+                    <img src="images/11Lipstick.jpg" alt="Lipstick">
+                </div> 
+                <h3>Lipstick</h3>
+                <p>Long-lasting lipstick with vibrant colors for all occasions. <br> 30SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الرابع - Lip Liner -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/lip.png" alt="Lip Liner">
-    </div>
-    <h3>Lip Liner</h3>
-    <p>Defines and shapes lips with smooth application. <br> 50SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الرابع - Lip Liner -->
+            <div class="product-card" data-name="Lip Liner">
+                <div class="product-image">
+                    <img src="images/lip.png" alt="Lip Liner">
+                </div>
+                <h3>Lip Liner</h3>
+                <p>Defines and shapes lips with smooth application. <br> 50SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الخامس - Eyebrow Pencil -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/1EyebrowPencil.jpg" alt="Eyebrow Pencil">
-    </div>
-    <h3>Eyebrow Pencil</h3>
-    <p>Perfectly fills and defines brows for a natural look. <br> 60SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الخامس - Eyebrow Pencil -->
+            <div class="product-card" data-name="Eyebrow Pencil">
+                <div class="product-image">
+                    <img src="images/1EyebrowPencil.jpg" alt="Eyebrow Pencil">
+                </div>
+                <h3>Eyebrow Pencil</h3>
+                <p>Perfectly fills and defines brows for a natural look. <br> 60SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج السادس - Eyeliner -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/1Eyeliner.jpg" alt="Eyeliner">
-    </div>
-    <h3>Eyeliner</h3>
-    <p>Bold and precise eyeliner for a striking eye look.<br> 40SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج السادس - Eyeliner -->
+            <div class="product-card" data-name="Eyeliner">
+                <div class="product-image">
+                    <img src="images/1Eyeliner.jpg" alt="Eyeliner">
+                </div>
+                <h3>Eyeliner</h3>
+                <p>Bold and precise eyeliner for a striking eye look.<br> 40SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج السابع - Blush -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/11blush.jpg" alt="Blush">
-    </div>
-    <h3>Blush</h3>
-    <p>Lightweight blush for a natural, radiant glow on cheeks.<br> 55SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج السابع - Blush -->
+            <div class="product-card" data-name="Blush">
+                <div class="product-image">
+                    <img src="images/11blush.jpg" alt="Blush">
+                </div>
+                <h3>Blush</h3>
+                <p>Lightweight blush for a natural, radiant glow on cheeks.<br> 55SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الثامن - Eyeshadow -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/11shadow.jpg" alt="Eyeshadow">
-    </div>
-    <h3>Eyeshadow</h3>
-    <p>Vibrant eyeshadow shades for eye makeup looks.<br> 80SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الثامن - Eyeshadow -->
+            <div class="product-card" data-name="Eyeshadow">
+                <div class="product-image">
+                    <img src="images/11shadow.jpg" alt="Eyeshadow">
+                </div>
+                <h3>Eyeshadow</h3>
+                <p>Vibrant eyeshadow shades for eye makeup looks.<br> 80SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج التاسع - Highlighter -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/1111Highlighter.jpg" alt="Highlighter">
-    </div>
-    <h3>Highlighter</h3>
-    <p>Shimmering highlighter for a glowing and radiant finish.<br> 30SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج التاسع - Highlighter -->
+            <div class="product-card" data-name="Highlighter">
+                <div class="product-image">
+                    <img src="images/1111Highlighter.jpg" alt="Highlighter">
+                </div>
+                <h3>Highlighter</h3>
+                <p>Shimmering highlighter for a glowing and radiant finish.<br> 30SR</p>
+                <button class ="add">Add</button>
+            </div>
  
         </section>
     </main>
@@ -177,6 +171,7 @@
             </div>
         </div>
     </footer> 
+    <script src="script.js"></script>
     <script src="edits.js"></script>
 </body>
 </html>
