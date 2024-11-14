@@ -32,131 +32,121 @@
     <main>
         <nav aria-label="Breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="HomePage.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="http://lujain734.github.io/Fashion-Funhouse/index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Toys</li>
-    
             </ol>
         </nav>
-<div class="sort-section">
-    <label for="sort">Sort by:</label>
-    <select id="sort">
-        <!-- مجموعة تصفية حسب السعر -->
-        <optgroup label="Price">
-            <option value="price-low-high">Price: Low to High</option>
-            <option value="price-high-low">Price: High to Low</option>
-        </optgroup>
+        
+        <div class="sort-section">
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+                <!-- مجموعة تصفية حسب السعر -->
+                <optgroup label="Price">
+                    <option value="price-low-high">Price: Low to High</option>
+                    <option value="price-high-low">Price: High to Low</option>
+                </optgroup>
  
-        <!-- مجموعة تصفية حسب التقييم -->
-        <optgroup label="Rating">
-            <option value="rating-high-low">Highest Rating</option>
-            <option value="rating-low-high">Lowest Rating</option>
-        </optgroup>
- 
-        <!-- مجموعة تصفية حسب الاسم -->
-        <optgroup label="Name">
-            <option value="name-a-z">Name: A to Z</option>
-            <option value="name-z-a">Name: Z to A</option>
-        </optgroup>
-    </select>
-</div>
+                <!-- مجموعة تصفية حسب الاسم -->
+                <optgroup label="Name">
+                    <option value="name-a-z">Name: A to Z</option>
+                    <option value="name-z-a">Name: Z to A</option>
+                </optgroup>
+            </select>
+        </div>
  
         <!-- شبكة المنتجات (Product Grid) -->
         <section class="product-grid">
  
             <!-- المنتج الاول -->
-            <div class="product-card">
+            <div class="product-card" data-name="PS5">
                 <div class="product-image">
                     <img src="images/aps5.jpg" alt="PS5">
                 </div>
                 <h3>PS5</h3>
                 <p>PS5, ultimate gaming with stunning graphics and fast loading.<br> 5500SR</p>
-                <button>Add</button>
+                <button class ="add">Add</button>
             </div>
            
-<!-- المنتج الثاني - Kids Kitchen -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/KidsKitchen.jpg" alt="Kids Kitchen">
-    </div>
-    <h3>Kids Kitchen</h3>
-    <p>Complete kitchen set for kids to enjoy cooking and playing.<br> 90SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الثاني - Kids Kitchen -->
+            <div class="product-card" data-name="Kids Kitchen">
+                <div class="product-image">
+                    <img src="images/KidsKitchen.jpg" alt="Kids Kitchen">
+                </div>
+                <h3>Kids Kitchen</h3>
+                <p>Complete kitchen set for kids to enjoy cooking and playing.<br> 90SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الثالث - LEGO Speed Champions BMW M4 GT3  -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/LEGOSpeed.jpg" alt="lego car ">
-    </div>
-    <h3>lego speed </h3>
-    <p>LEGO Speed Champions BMW M4 GT3, 1400 extra fast.<br> 100SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الثالث - LEGO Speed Champions BMW M4 GT3  -->
+            <div class="product-card" data-name="LEGO Speed">
+                <div class="product-image">
+                    <img src="images/LEGOSpeed.jpg" alt="LEGO Car">
+                </div>
+                <h3>LEGO Speed</h3>
+                <p>LEGO Speed Champions BMW M4 GT3, 1400 extra fast.<br> 100SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الرابع - Nintendo -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/Nintendo.jpg" alt="Nintendo">
-    </div>
-    <h3>Nintendo</h3>
-    <p>Portable gaming console with endless entertainment for all ages.<br> 70SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الرابع - Nintendo -->
+            <div class="product-card" data-name="Nintendo">
+                <div class="product-image">
+                    <img src="images/Nintendo.jpg" alt="Nintendo">
+                </div>
+                <h3>Nintendo</h3>
+                <p>Portable gaming console with endless entertainment for all ages.<br> 70SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الخامس - bulding blocks  -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/BuildingBlocks.jpg" alt="Building Blocks ">
-    </div>
-    <h3>Building Blocks </h3>
-    <p>Winner Toys Building Blocks Playset Activity Blocks.<br> 60SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الخامس - Building Blocks -->
+            <div class="product-card" data-name="Building Blocks">
+                <div class="product-image">
+                    <img src="images/BuildingBlocks.jpg" alt="Building Blocks">
+                </div>
+                <h3>Building Blocks</h3>
+                <p>Winner Toys Building Blocks Playset Activity Blocks.<br> 60SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج السادس - red Car -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/redcars.jpg" alt="red Car">
-    </div>
-    <h3>red Car</h3>
-    <p>Interactive red car toy with flashing lights and sounds.<br> 90SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج السادس - Red Car -->
+            <div class="product-card" data-name="Red Car">
+                <div class="product-image">
+                    <img src="images/redcars.jpg" alt="Red Car">
+                </div>
+                <h3>Red Car</h3>
+                <p>Interactive red car toy with flashing lights and sounds.<br> 90SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج السابع - Toys Trucks -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/trucks.jpg" alt="Toys Trucks">
-    </div>
-    <h3>Toys Trucks</h3>
-    <p>Heavy-duty trucks designed for rough play and construction fun.<br>70SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج السابع - Toys Trucks -->
+            <div class="product-card" data-name="Toys Trucks">
+                <div class="product-image">
+                    <img src="images/trucks.jpg" alt="Toys Trucks">
+                </div>
+                <h3>Toys Trucks</h3>
+                <p>Heavy-duty trucks designed for rough play and construction fun.<br> 70SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الثامن - Puzzle House -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/Puzzle.jpg" alt="Puzzle House">
-    </div>
-    <h3>Puzzle House</h3>
-    <p>Challenging puzzle house set to boost creativity and thinking skills.<br> 60SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الثامن - Puzzle House -->
+            <div class="product-card" data-name="Puzzle House">
+                <div class="product-image">
+                    <img src="images/Puzzle.jpg" alt="Puzzle House">
+                </div>
+                <h3>Puzzle House</h3>
+                <p>Challenging puzzle house set to boost creativity and thinking skills.<br> 60SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج التاسع - Chef Set  -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/chefset.jpg" alt=" Chef Set ">
-    </div>
-    <h3> Chef Set </h3>
-    <p>Little Chef Set in Car Shape Suitcase Kid's Pretend Play.<br> 90SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج التاسع - Chef Set -->
+            <div class="product-card" data-name="Chef Set">
+                <div class="product-image">
+                    <img src="images/chefset.jpg" alt="Chef Set">
+                </div>
+                <h3>Chef Set</h3>
+                <p>Little Chef Set in Car Shape Suitcase Kid's Pretend Play.<br> 90SR</p>
+                <button class ="add">Add</button>
+            </div>
 
-
-
-     
-      
         </section>
     </main>
  
@@ -181,6 +171,8 @@
             </div>
         </div>
     </footer> 
+    <script src="script.js"></script>
     <script src="edits.js"></script>
+ 
 </body>
 </html>
