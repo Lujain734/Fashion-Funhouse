@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> clothes- Fashion & Funhouse</title>
+    <title>Clothes - Fashion & Funhouse</title>
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
@@ -29,134 +27,126 @@
             <li><a href="CartPage.html" accesskey="y">Cart</a></li>
         </ul>
     </nav>
+    
     <!-- المحتوى الرئيسي (Main Content) -->
     <main>
         <nav aria-label="Breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="HomePage.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="http://lujain734.github.io/Fashion-Funhouse/index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Clothes</li>
-    
             </ol>
         </nav>
-<div class="sort-section">
-    <label for="sort">Sort by:</label>
-    <select id="sort">
-        <!-- مجموعة تصفية حسب السعر -->
-        <optgroup label="Price">
-            <option value="price-low-high">Price: Low to High</option>
-            <option value="price-high-low">Price: High to Low</option>
-        </optgroup>
+        
+        <div class="sort-section">
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+                <!-- مجموعة تصفية حسب السعر -->
+                <optgroup label="Price">
+                    <option value="price-low-high">Price: Low to High</option>
+                    <option value="price-high-low">Price: High to Low</option>
+                </optgroup>
  
-        <!-- مجموعة تصفية حسب التقييم -->
-        <optgroup label="Rating">
-            <option value="rating-high-low">Highest Rating</option>
-            <option value="rating-low-high">Lowest Rating</option>
-        </optgroup>
- 
-        <!-- مجموعة تصفية حسب الاسم -->
-        <optgroup label="Name">
-            <option value="name-a-z">Name: A to Z</option>
-            <option value="name-z-a">Name: Z to A</option>
-        </optgroup>
-    </select>
-</div>
+                <!-- مجموعة تصفية حسب الاسم -->
+                <optgroup label="Name">
+                    <option value="name-a-z">Name: A to Z</option>
+                    <option value="name-z-a">Name: Z to A</option>
+                </optgroup>
+            </select>
+        </div>
  
         <!-- شبكة المنتجات (Product Grid) -->
         <section class="product-grid">
 
-
-<!-- المنتج الأول - T-shirt -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/shirt.png" alt="T-shirt">
-    </div>
-    <h3>T-shirt</h3>
-    <p>Casual cotton T-shirt available in multiple colors and sizes.<br> 70SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الأول - T-shirt -->
+            <div class="product-card" data-name="T-shirt">
+                <div class="product-image">
+                    <img src="images/shirt.png" alt="T-shirt">
+                </div>
+                <h3>T-shirt</h3>
+                <p>Casual cotton T-shirt available in multiple colors and sizes.<br> 70SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الثاني - Jeans -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/jens.png" alt="Jeans">
-    </div>
-    <h3>Jeans</h3>
-    <p>Classic blue jeans with a comfortable fit and durable fabric.<br> 50SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الثاني - Jeans -->
+            <div class="product-card" data-name="Jeans">
+                <div class="product-image">
+                    <img src="images/jens.png" alt="Jeans">
+                </div>
+                <h3>Jeans</h3>
+                <p>Classic blue jeans with a comfortable fit and durable fabric.<br> 50SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الثالث - Jacket -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/jaket.png" alt="Jacket">
-    </div>
-   <h3>Jacket</h3>
-    <p>Stylish  jacket perfect for casual and formal wear.<br> 90SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الثالث - Jacket -->
+            <div class="product-card" data-name="Jacket">
+                <div class="product-image">
+                    <img src="images/jaket.png" alt="Jacket">
+                </div>
+                <h3>Jacket</h3>
+                <p>Stylish jacket perfect for casual and formal wear.<br> 90SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الرابع - Cardigan -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/clothe.png" alt="Cardigan.webp">
-    </div>
-    <h3>Cardigan</h3>
-    <p>Elegant Cardigan designed for special occasions.<br> 30SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الرابع - Cardigan -->
+            <div class="product-card" data-name="Cardigan">
+                <div class="product-image">
+                    <img src="images/clothe.png" alt="Cardigan">
+                </div>
+                <h3>Cardigan</h3>
+                <p>Elegant Cardigan designed for special occasions.<br> 30SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الخامس - Hoodie -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/hoodi.png" alt="Hoodie">
-    </div>
-    <h3>Hoodie</h3>
-    <p>Warm and cozy hoodie, perfect for chilly weather.<br> 53SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الخامس - Hoodie -->
+            <div class="product-card" data-name="Hoodie">
+                <div class="product-image">
+                    <img src="images/hoodi.png" alt="Hoodie">
+                </div>
+                <h3>Hoodie</h3>
+                <p>Warm and cozy hoodie, perfect for chilly weather.<br> 53SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج السادس - Skirt -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/sckert.png" alt="Skirt">
-    </div>
-    <h3>Skirt</h3>
-    <p>Flowy midi skirt available in various prints and colors<br> 50SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج السادس - Skirt -->
+            <div class="product-card" data-name="Skirt">
+                <div class="product-image">
+                    <img src="images/sckert.png" alt="Skirt">
+                </div>
+                <h3>Skirt</h3>
+                <p>Flowy midi skirt available in various prints and colors<br> 50SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج السابع - Shorts -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/short.png" alt="Shorts">
-    </div>
-    <h3>Shorts</h3>
-    <p>Comfortable shorts ideal for summer and casual outings.<br> 80SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج السابع - Shorts -->
+            <div class="product-card" data-name="Shorts">
+                <div class="product-image">
+                    <img src="images/short.png" alt="Shorts">
+                </div>
+                <h3>Shorts</h3>
+                <p>Comfortable shorts ideal for summer and casual outings.<br> 80SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج الثامن - Sweater  -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/swetr.png" alt="Sweater ">
-    </div>
-    <h3>Sweater </h3>
-    <p>Trendy Sweater offering style and comfort for everyday wear.<br> 33SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج الثامن - Sweater -->
+            <div class="product-card" data-name="Sweater">
+                <div class="product-image">
+                    <img src="images/swetr.png" alt="Sweater">
+                </div>
+                <h3>Sweater</h3>
+                <p>Trendy Sweater offering style and comfort for everyday wear.<br> 33SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-<!-- المنتج التاسع - Hat -->
-<div class="product-card">
-    <div class="product-image">
-        <img src="images/hat.png" alt="Hat">
-    </div>
-    <h3>Hat</h3>
-    <p>Classic baseball cap for sun protection and style.<br> 50SR</p>
-    <button>Add</button>
-</div>
+            <!-- المنتج التاسع - Hat -->
+            <div class="product-card" data-name="Hat">
+                <div class="product-image">
+                    <img src="images/hat.png" alt="Hat">
+                </div>
+                <h3>Hat</h3>
+                <p>Classic baseball cap for sun protection and style.<br> 50SR</p>
+                <button class ="add">Add</button>
+            </div>
  
-     
-      
         </section>
     </main>
  
@@ -181,6 +171,8 @@
             </div>
         </div>
     </footer> 
+    <script src="script.js"></script>
     <script src="edits.js"></script>
+
 </body>
 </html>
