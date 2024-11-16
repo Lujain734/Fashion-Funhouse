@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <title>Product Evaluation</title>
     <link rel="stylesheet" href="Style.css">
+<script src="ProductEvaluation.js" ></script>
+
 </head>
 
  <body>
@@ -31,7 +33,7 @@
 
         <nav aria-label="Breadcrumb">
         <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="HomePage.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="http://lujain734.github.io/Fashion-Funhouse/index.html">Home</a></li>
         <li class="breadcrumb-item"><a href="UserPage.html">User Page</a></li>
         <li class="breadcrumb-item active" aria-current="page">Product Evaluation</li>
         </ol>
@@ -41,35 +43,39 @@
         
         <div class="evaluation-form">
         
-        <form>
+        <form id="evaluationForm" method="post" action="javascript:void(0);"> 
         
         <div id="select">
-        <select id="order">
-        <option>Previous Orders</option>
-        <option>Order 12345</option>
-        <option>Order 67890</option>
+        <select id="order" required>
+        <option value="" disabled selected>Previous Orders</option>
+        <option value="12345">Order 12345</option>
+        <option value="67890">Order 67890</option>
         </select>
-        <select id="product">
-        <option>Product</option>
-        <option>shirt</option>
-        <option>jacket</option>
+        <select id="product" required>
+        <option value="" disabled selected>Product</option>
+        <option value="shirt">shirt</option>
+        <option value="jacket">jacket</option>
         </select>
         </div>
          
         <hr>
         
         <div class="rating">
-        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
         </div>
         
         <label for="feedback">feedback</label>
         <textarea id="feedback" placeholder="Enter feedback here"></textarea>
-        <button class="submit">Submit</button>
+        <button type="button" id="submitBtn" class="submit">Submit</button>
         </form>
         
         </div>
-        
         </main>
+		
     <footer>
         <div class="footer-container">
             <p class="copyright">Copyright &copy; 2024 Fashion & Funhouse. All rights reserved.</p>
