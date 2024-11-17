@@ -839,12 +839,13 @@ body {
     body.dark-theme .cart td{
         color: white;
     }
-   body .dark-theme .cart td .decrease button {
+   body.dark-theme.cart td .quantity input{
+     color: white;   
+   }
+   body .dark-theme .cart td .quantity button {
    color: white;
     }
-   body .dark-theme .cart  td .increase button {
-   color: white;
-    }
+   
     body.dark-theme #order-item th{
         color: white;
     }
