@@ -840,9 +840,10 @@ body {
         color: white;
     }
    body.dark-theme.cart td .quantity input{
-     color: white;   
+     color: black;   
    }
-   body.dark-theme.cart td .quantity {
+   body.dark-theme.cart td .quantity .increase button, 
+  body.dark-theme.cart td .quantity .decrease button{
    color: white;
     }
    
