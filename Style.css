@@ -750,8 +750,7 @@ body {
     body.dark-theme .submit,
     body.dark-theme .checkout,
     body.dark-theme .delete,
-    body.dark-theme .cart td .neg,
-    body.dark-theme .cart td .plus,
+    body.dark-theme .cart td .quantity button,
     body.dark-theme .delete-btn,
     body.dark-theme .new-offer,
     body.dark-theme .offers-grid,
@@ -770,8 +769,7 @@ body {
     body.dark-theme .review-text,
     body.dark-theme #feedback,
     body.dark-theme .evaluation-form label
-    body.dark-theme #order,
-    body.dark-theme #prododuct,
+    body.dark-theme .evaluation-form select,
     body.dark-theme .category-item,
     body.dark-theme .review {
         background-color: #00509e; /* Light blue items */
