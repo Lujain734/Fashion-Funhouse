@@ -769,7 +769,7 @@ body {
     body.dark-theme .review-content,
     body.dark-theme .review-text,
     body.dark-theme #feedback,
-    body.dark-theme #select
+    body.dark-theme .evaluation-form label
     body.dark-theme .category-item,
     body.dark-theme .review {
         background-color: #00509e; /* Light blue items */
@@ -778,7 +778,7 @@ body {
     {
         color: white; /* White text for links */
     }
-    body.dark-theme .feedback
+    body.dark-theme .evaluation-form label
     {
         color: white; /* White text for links */
     }
@@ -856,9 +856,9 @@ body {
     body.dark-theme #order-item td{
         background-color: #00509e;  
     }
-    body.dark-theme .cart {
+   /* body.dark-theme .cart {
         background-color: #00509e;  
-    }
+    }*/
     
     @media (max-width: 768px) {
         .nav-menu {
