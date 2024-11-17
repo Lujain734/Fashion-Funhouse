@@ -768,7 +768,7 @@ body {
     body.dark-theme .review-content,
     body.dark-theme .review-text,
     body.dark-theme #feedback,
-    body.dark-theme .evaluation-form label,
+    body.dark-theme  .evaluation-form select,
     body.dark-theme .category-item,
     body.dark-theme .review {
         background-color: #00509e; /* Light blue items */
