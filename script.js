@@ -3,14 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const productGrid = document.querySelector(".product-grid");
     const addButtons = document.querySelectorAll(".product-card button");
 
-    // قائمة المنتجات (كمصفوفة لتسهيل الترتيب)
     let products = Array.from(document.querySelectorAll(".product-card")).map(card => ({
         element: card,
         name: card.querySelector("h3").innerText,
         price: parseInt(card.querySelector("p").innerText.match(/\d+/)[0])
     }));
 
-    // ترتيب المنتجات
+  
     if (sortSelect) {
         sortSelect.addEventListener("change", () => {
             const selectedOption = sortSelect.value;
@@ -25,23 +24,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 products.sort((a, b) => b.name.localeCompare(a.name));
             }
 
-            // إعادة ترتيب العناصر في الـ DOM
+          
             products.forEach(product => productGrid.appendChild(product.element));
         });
     }
 
-    // إضافة المنتجات إلى السلة وتحديث الكمية في Local Storage
+    
     addButtons.forEach(button => {
         button.addEventListener("click", (event) => {
             const productCard = event.target.closest(".product-card");
-            const productName = productCard.getAttribute("data-name"); // استخدام data-name
+            const productName = productCard.getAttribute("data-name"); 
             const product = products.find(p => p.name === productName);
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-            // البحث عن المنتج في السلة وتحديث الكمية
+         
             const existingProduct = cart.find(item => item.name === product.name);
             if (existingProduct) {
-                existingProduct.quantity += 1; // زيادة الكمية إذا كان المنتج موجود بالفعل
+                existingProduct.quantity += 1; 
             } else {
                 cart.push({ name: product.name, price: product.price, quantity: 1 });
             }
@@ -49,22 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("cart", JSON.stringify(cart));
             alert(`${product.name} added to cart!`);
 
-            // توجيه المستخدم إلى صفحة السلة
+       
             window.location.href = "CartPage.html";
         });
     });
 
-    // عرض محتويات السلة في صفحة CartPage
+ 
     if (window.location.pathname.includes("CartPage.html")) {
         const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
         const cartTable = document.querySelector(".cart table");
 
-        // إزالة المنتجات الافتراضية من الجدول
+   
         while (cartTable.rows.length > 1) {
             cartTable.deleteRow(1);
         }
 
-        // إضافة المنتجات المخزنة في السلة
         cartItems.forEach(item => {
             const row = cartTable.insertRow();
             row.innerHTML = `
@@ -85,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // تحديث الإجمالي
         updateTotal();
 
-        // وظيفة الأزرار "إزالة المنتج" و"زيادة/نقصان الكمية"
+      
         document.querySelectorAll(".remove-item").forEach((button, index) => {
             button.addEventListener("click", () => {
                 cartItems.splice(index, 1);
