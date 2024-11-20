@@ -35,25 +35,28 @@ document.addEventListener("DOMContentLoaded", () => {
     addButtons.forEach(button => {
         button.addEventListener("click", (event) => {
             const productCard = event.target.closest(".product-card");
-            const productName = productCard.getAttribute("data-name"); // استخدام data-name
-            const product = products.find(p => p.name === productName);
+            const productName = productCard.getAttribute("data-name");
+            const productImage = productCard.querySelector("img").src; // جلب مسار الصورة
+            const productPrice = parseInt(productCard.querySelector("p").innerText.match(/\d+/)[0]);
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-            // البحث عن المنتج في السلة وتحديث الكمية
-            const existingProduct = cart.find(item => item.name === product.name);
+    
+            const existingProduct = cart.find(item => item.name === productName);
             if (existingProduct) {
-                existingProduct.quantity += 1; // زيادة الكمية إذا كان المنتج موجود بالفعل
+                existingProduct.quantity += 1;
             } else {
-                cart.push({ name: product.name, price: product.price, quantity: 1,  imagePath: product.imagePath });
+                cart.push({
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1,
+                    image: productImage // إضافة مسار الصورة
+                });
             }
-
+    
             localStorage.setItem("cart", JSON.stringify(cart));
-            alert(`${product.name} added to cart!`);
-
-            // توجيه المستخدم إلى صفحة السلة
-            ///////////////////////////////window.location.href = "CartPage.html";
+            alert(`${productName} added to cart!`);
         });
     });
+    
 
     // عرض محتويات السلة في صفحة CartPage
     if (window.location.pathname.includes("CartPage.html")) {
@@ -69,13 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
         cartItems.forEach(item => {
             const row = cartTable.insertRow();
             row.innerHTML = `
-<td>
-                    <img src="${item.imagePath || 'images/placeholder.png'}" 
-                         alt="Product Image" 
-                         width="50" 
-                         onerror="this.src='images/placeholder.png';">
-                </td>                <td>${item.name}</td>
-                <td>${item.price}SR</td>
+                <td><img src="${item.image}" alt="${item.name}" width="50"></td>
+                <td>${item.name}</td>
+                <td>${item.price} SR</td>
                 <td>
                     <div class="quantity">
                         <button class="decrease">-</button>
@@ -86,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td><button class="remove-item">X</button></td>
             `;
         });
+        
 
         // تحديث الإجمالي
         updateTotal();
