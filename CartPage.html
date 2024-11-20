@@ -135,12 +135,13 @@
         }
     
         // إضافة المنتجات المخزنة في السلة إلى الجدول
+	    //src="images/placeholder.png"
         cartItems.forEach((item, index) => {
             const row = cartTable.insertRow();
-            row.innerHTML = `
-                <td><img src="images/placeholder.png"  alt="Product Image" width="50"></td>
+            row.innerHTML = ` 
+                <td><img src="${item.image}" alt="${item.name}" alt="Product Image" width="50"></td>
                 <td>${item.name}</td>
-                <td>${item.price} SR</td>
+                <td>${item.price} 
                 <td>
                     <div class="quantity">
                         <button class="decrease">-</button>
