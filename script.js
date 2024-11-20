@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (existingProduct) {
                 existingProduct.quantity += 1; // زيادة الكمية إذا كان المنتج موجود بالفعل
             } else {
-                cart.push({ name: product.name, price: product.price, quantity: 1 });
+                cart.push({ name: product.name, price: product.price, quantity: 1,  imagePath: product.imagePath });
             }
 
             localStorage.setItem("cart", JSON.stringify(cart));
@@ -69,8 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
         cartItems.forEach(item => {
             const row = cartTable.insertRow();
             row.innerHTML = `
-                <td><img src="images/placeholder.png" alt="Product Image" width="50"></td>
-                <td>${item.name}</td>
+<td>
+                    <img src="${item.imagePath || 'images/placeholder.png'}" 
+                         alt="Product Image" 
+                         width="50" 
+                         onerror="this.src='images/placeholder.png';">
+                </td>                <td>${item.name}</td>
                 <td>${item.price}SR</td>
                 <td>
                     <div class="quantity">
