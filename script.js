@@ -135,3 +135,4 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".total span:last-child").innerText = `${total}SR`;
     }
 }});
+
