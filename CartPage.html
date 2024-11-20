@@ -138,7 +138,7 @@
         cartItems.forEach((item, index) => {
             const row = cartTable.insertRow();
             row.innerHTML = `
-                <td><img src="images/placeholder.png" alt="Product Image" width="50"></td>
+                <td><img src="${item.imagePath || 'images/placeholder.png'}"  alt="Product Image" width="50"  onerror="this.src='images/placeholder.png';"></td>
                 <td>${item.name}</td>
                 <td>${item.price} SR</td>
                 <td>
