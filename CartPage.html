@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Cart Page</title>
     <link rel="stylesheet" href="Style.css">
-	<script src="CartPage.js"></script>
 </head>
-
- <body>
+<body>
     <header>
         <div class="header-container">
             <img src="images/logo.png" alt="Website Logo" id="logo">
-            <h1>Fashion&amp;Funhouse</h1>
+            <h1>Fashion & Funhouse</h1>
             <p class="vision-statement">Our vision is to create a joyful shopping experience!</p>
         </div>
     </header>
@@ -24,7 +20,7 @@
             <li><a href="Toys.html" accesskey="t">Toys</a></li>
             <li><a href="Clothes.html" accesskey="h">Clothes</a></li>
             <li><a href="Makeup.html" accesskey="m">Makeup</a></li>
-            <li><a href="CartPage.html" accesskey="y">Cart</a></li>
+            <li><a href="CartPage.html" id="cartLink" accesskey="y">Cart</a></li>
         </ul>
     </nav>
     <main>
@@ -120,40 +116,76 @@
                 </div>
             </div>
         </div>
-    </footer> 
-     <script src="edits.js"></script>
- </body>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="CartPage.js"></script>
+    <script src="edits.js"></script> 
+</body>
 </html>
-<script> 
-document.addEventListener("DOMContentLoaded", () => {         
-	const cartItems = JSON.parse(localStorage.getItem("cart")) || [];        
-	const cartTable = document.querySelector(".cart table");         
-	const totalElement = document.querySelector(".total span:last-child");              // إزالة المنتجات الافتراضية من الجدول        
-	while (cartTable.rows.length > 1) {            
-		cartTable.deleteRow(1);        
-	}              // إضافة المنتجات المخزنة في السلة إلى الجدول       
-	cartItems.forEach((item, index) => {             
-		const row = cartTable.insertRow();            
-		row.innerHTML = `<td><img src="images/placeholder.png" alt="Product Image" width="50"></td> <td>${item.name}</td> <td>${item.price} SR</td> <td><div class="quantity"><button class="decrease">-</button><input type="number" value="${item.quantity}" min="1"><button class="increase">+</button></div></td> <td><button class="remove-item">X</button></td>`;});              // تحديث إجمالي السعر        
-	    updateTotal();              // وظائف الأزرار "إزالة المنتج" و"زيادة/نقصان الكمية"        
-	document.querySelectorAll(".remove-item").forEach((button, index) => {           
-		button.addEventListener("click", () => {                
-			cartItems.splice(index, 1); // إزالة المنتج من السلة               
-			localStorage.setItem("cart", JSON.stringify(cartItems)); // تحديث السلة في localStorage               
-			location.reload(); // إعادة تحميل الصفحة لتحديث العرض             });         });            
-			document.querySelectorAll(".quantity .increase").forEach((button, index) => {          
-				button.addEventListener("click", () => {                
-					cartItems[index].quantity += 1; // زيادة الكمية           
-					localStorage.setItem("cart", JSON.stringify(cartItems)); // تحديث السلة في localStorage              
-					location.reload(); // إعادة تحميل الصفحة لتحديث العرض             });         });          
-					document.querySelectorAll(".quantity .decrease").forEach((button, index) => {        
-						button.addEventListener("click", () => {               
-							if (cartItems[index].quantity > 1) {                 
-								cartItems[index].quantity -= 1; // تقليل الكمية               
-								localStorage.setItem("cart", JSON.stringify(cartItems)); // تحديث السلة في localStorage                   
-								location.reload(); // إعادة تحميل الصفحة لتحديث العرض                 }             });         }); 
-								// دالة لحساب وتحديث الإجمالي        
-								function updateTotal() {          
-									const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);             
-									totalElement.innerText = `${total} SR`;         }     });    
-						</script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartTable = document.querySelector(".cart table");
+        const totalElement = document.querySelector(".total span:last-child");
+    
+        // إزالة المنتجات الافتراضية من الجدول
+        while (cartTable.rows.length > 1) {
+            cartTable.deleteRow(1);
+        }
+    
+        // إضافة المنتجات المخزنة في السلة إلى الجدول
+        cartItems.forEach((item, index) => {
+            const row = cartTable.insertRow();
+            row.innerHTML = `
+                <td><img src="images/placeholder.png" alt="Product Image" width="50"></td>
+                <td>${item.name}</td>
+                <td>${item.price} SR</td>
+                <td>
+                    <div class="quantity">
+                        <button class="decrease">-</button>
+                        <input type="number" value="${item.quantity}" min="1">
+                        <button class="increase">+</button>
+                    </div>
+                </td>
+                <td><button class="remove-item">X</button></td>
+            `;
+        });
+    
+        // تحديث إجمالي السعر
+        updateTotal();
+    
+        // وظائف الأزرار "إزالة المنتج" و"زيادة/نقصان الكمية"
+        document.querySelectorAll(".remove-item").forEach((button, index) => {
+            button.addEventListener("click", () => {
+                cartItems.splice(index, 1); // إزالة المنتج من السلة
+                localStorage.setItem("cart", JSON.stringify(cartItems)); // تحديث السلة في localStorage
+                location.reload(); // إعادة تحميل الصفحة لتحديث العرض
+            });
+        });
+    
+        document.querySelectorAll(".quantity .increase").forEach((button, index) => {
+            button.addEventListener("click", () => {
+                cartItems[index].quantity += 1; // زيادة الكمية
+                localStorage.setItem("cart", JSON.stringify(cartItems)); // تحديث السلة في localStorage
+                location.reload(); // إعادة تحميل الصفحة لتحديث العرض
+            });
+        });
+    
+        document.querySelectorAll(".quantity .decrease").forEach((button, index) => {
+            button.addEventListener("click", () => {
+                if (cartItems[index].quantity > 1) {
+                    cartItems[index].quantity -= 1; // تقليل الكمية
+                    localStorage.setItem("cart", JSON.stringify(cartItems)); // تحديث السلة في localStorage
+                    location.reload(); // إعادة تحميل الصفحة لتحديث العرض
+                }
+            });
+        });
+    
+        // دالة لحساب وتحديث الإجمالي
+        function updateTotal() {
+            const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            totalElement.innerText = `${total} SR`;
+        }
+    });
+    </script>
