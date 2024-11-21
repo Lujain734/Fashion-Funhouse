@@ -768,6 +768,8 @@ body {
     body.dark-theme .review-content,
     body.dark-theme .review-text,
     body.dark-theme #feedback,
+    body.dark-theme .cart td .quantity .increase button, 
+    body.dark-theme .cart td .quantity .decrease button
     body.dark-theme .evaluation-form select,
     body.dark-theme .category-item,
     body.dark-theme .review {
@@ -842,10 +844,10 @@ body {
    body.dark-theme.cart td .quantity input{
      color: black;   
    }
-   body.dark-theme.cart td .quantity .increase button, 
+  /* body.dark-theme.cart td .quantity .increase button, 
   body.dark-theme.cart td .quantity .decrease button{
    color: white;
-    }
+    }*/
    
     body.dark-theme #order-item th{
         color: white;
