@@ -492,7 +492,7 @@ body {
     cursor: pointer;
     margin: 0 10px;
     border-radius: 5px;
-    color: #800080;
+    /*color: #800080;*/
     }
     .cart td .quantity input {
     width: 30px;
@@ -768,7 +768,8 @@ body {
     body.dark-theme .review-content,
     body.dark-theme .review-text,
     body.dark-theme #feedback,
-    body.dark-theme .cart td .quantity button,
+    body.dark-theme .cart td .quantity .increase button,
+    body.dark-theme .cart td .quantity .decrease button,
     body.dark-theme .evaluation-form select,
     body.dark-theme .category-item,
     body.dark-theme .review {
