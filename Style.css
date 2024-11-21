@@ -768,8 +768,8 @@ body {
     body.dark-theme .review-content,
     body.dark-theme .review-text,
     body.dark-theme #feedback,
-    body.dark-theme .cart td .quantity .increase button, 
-    body.dark-theme .cart td .quantity .decrease button
+    body.dark-theme .increase, 
+    body.dark-theme .decrease,
     body.dark-theme .evaluation-form select,
     body.dark-theme .category-item,
     body.dark-theme .review {
