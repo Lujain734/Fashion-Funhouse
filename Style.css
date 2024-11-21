@@ -751,6 +751,8 @@ body {
     body.dark-theme .checkout,
     body.dark-theme .delete,
     body.dark-theme .cart td .quantity button,
+    body.dark-theme .cart td .quantity button .decrease,    
+    body.dark-theme .cart td .quantity .increase button,
     body.dark-theme .delete-btn,
     body.dark-theme .new-offer,
     body.dark-theme .offers-grid,
