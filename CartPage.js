@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Update the total
-    calculateTotal();
+    updateTotal();
 
     // Button functions: remove item, increase/decrease quantity
     document.querySelectorAll(".remove-item").forEach((button, index) => {
@@ -60,30 +60,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-
-    // Function to calculate the total
-    function calculateTotal() {
-        let total = 0;
-        const rows = cart.getElementsByTagName("tr");
-        for (let i = 0; i < rows.length; i++) {
-            var row = rows[i];
-            var price = parseInt(row.getElementsByClassName("price")[0].textContent.replace('SR', '').trim());
-            var quantity = parseInt(row.getElementsByClassName("quantity")[0].getElementsByTagName("input")[0].value);
-            total += price * quantity;
-        }
-        totalAmount.textContent = total ;
-    }
-    /*// Calculate and update the total
+    // Calculate and update the total
     function updateTotal() {
         var total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
         totalElement.innerText = `${total} SR`;
         totalAmountElement.textContent = total;
-    }*/
+    }
 
     // Clear all items
     function clearCart() {
         cart.innerHTML = '';
-        calculateTotal();
+        updateTotal();
     }
 
     // Checkout
@@ -107,12 +94,12 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (event.target.classList.contains('decrease') && quantity > 1) {
                 input.value = quantity - 1;
             }
-            calculateTotal();
+            updateTotal();
         }
 
         if (event.target.classList.contains('remove-item')) {
             event.target.closest('tr').remove();
-            calculateTotal();
+            updateTotal();
         }
     }
 });
