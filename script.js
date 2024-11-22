@@ -37,8 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const productCard = event.target.closest(".product-card");
             const productName = productCard.getAttribute("data-name");
             const productImage = productCard.querySelector("img").src; // جلب مسار الصورة
-            const productPrice = parseInt(productCard.querySelector("p").innerText.replace(/[^0-9]/g, ""));
-           // const productPrice = parseInt(productCard.querySelector("p").innerText.match(/\d+/)[0]);
+            const productPrice = parseInt(productCard.querySelector("p").innerText.match(/\d+/)[0]);
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
     
             const existingProduct = cart.find(item => item.name === productName);
