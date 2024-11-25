@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Checkout
     function checkout() {
-        alert('Purchasing process successful!\n\nTotal: ' + totalAmount.textContent + ' SR');
+        alert('Purchasing process successful!\n\nTotal: ' + totalAmount.textContent ); //+ ' SR'
         window.location.href = 'ProductEvaluation.html'; // Redirect to evaluation page
     }
 
